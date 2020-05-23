@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto;
+}
+
+.subhead {
+  padding: 5px 10px;
+  margin-top: 10px;
+
+  background-color: aliceblue;
+  box-shadow: 0px 5px 5px gray;
+}
+
+li,
+a {
+  color: rgb(207, 34, 4);
+  background-color: none;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: 200%;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #000;
+  box-shadow: 0px 10px 10px grey;
+}
+
+.logo {
+  cursor: pointer;
+  height: 100px;
+}
+
+.Nav_links {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 30px;
+}
+
+.Nav_links a {
+  display: inline-block;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  background-color: rgb(207, 34, 4);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.Nav_links a:hover {
+  color: rgb(237, 238, 238);
+  background-color: rgb(185, 31, 3);
+}
+
+.section {
+  margin: 5px;
+}
+.HeadPhoto
+{
+  display:inline;
+}
+button {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  background-color: rgb(207, 34, 4);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in 0s, color 0.3s ease-in;
+}
+
+button:hover {
+  background-color: rgb(180, 28, 2);
+  color: rgb(237, 238, 238);
+}
+
+body {
+  width: 100%;
+  background-color: rgb(155, 154, 154);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.grid-box {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  color: rgb(0, 0, 0);
+}
+
+.grid-box > div {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.514);
+  word-break: break-word;
+}
+
+.grid-box > div {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 4px 0px 4px 0px;
+}
+
+hr {
+  height: 20%;
+  grid-column: 1/5;
+  border: none;
+  background-color: rgb(180, 0, 0);
+}
+
+.grid-box-2 {
+  display: flex;
+  flex-direction: column;
+}

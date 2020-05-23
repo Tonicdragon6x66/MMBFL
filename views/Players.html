@@ -1,0 +1,49 @@
+<h1 class="subhead"><u>Players In The League</u></h1>
+<div class="section">
+  <div class="section">
+    <span>Search: </span>
+    <input class="search" />
+  </div>
+  <div class="grid-box grid-box-2" id="dad"></div>
+</div>
+<script>
+  function el(tagName, className, ...args) {
+    const element = document.createElement(tagName);
+    if (className) element.className = className;
+    for (const arg of args) {
+      if (arg instanceof HTMLElement) element.appendChild(arg);
+      else if (typeof arg !== "object")
+        element.appendChild(document.createTextNode(arg));
+      else
+        for (const attr in arg) {
+          if (typeof arg[attr] === "function") element[attr] = arg[attr];
+          else if (arg[attr] !== undefined && arg[attr] !== null)
+            element.setAttribute(attr, arg[attr]);
+        }
+    }
+    return element;
+  }
+
+  const foo = document.getElementById("dad");
+
+  document
+    .getElementsByClassName("search")[0]
+    .addEventListener("input", function(event) {
+      var x = event.target.value.toLowerCase();
+      for (var i = 0; i < foo.children.length; i++) {
+        const child = foo.children[i];
+        const matches = child.textContent.toLowerCase().includes(x);
+        child.style.display = matches ? "" : "none";
+      }
+    });
+
+  const spreadsheetData =
+    "https://spreadsheets.google.com/feeds/list/1D9-wC8Q0WlZ1YCOCWV5KWiUtugHKjOHFHSBtl-1N4gI/1/public/values?alt=json";
+  fetch(spreadsheetData)
+    .then(response => response.json())
+    .then(data => {
+      for (const entry of data.feed.entry) {
+        foo.appendChild(el("div", null, entry["gsx$player"]["$t"]));
+      }
+    });
+</script>
